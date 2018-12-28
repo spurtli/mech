@@ -1,0 +1,12 @@
+# system
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# firmware
+qmk_firmware/
+
+# build
+build/

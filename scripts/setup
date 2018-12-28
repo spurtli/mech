@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd "${BASH_SOURCE%/*}/../" || exit
+
+git -C qmk_firmware pull || git clone --depth 1 https://github.com/qmk/qmk_firmware.git qmk_firmware
+
+rsync -a ./keyboards ./qmk_firmware/
+
+mkdir -p ./build

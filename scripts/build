@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+cd "${BASH_SOURCE%/*}/../qmk_firmware" || exit
+
+die () {
+    echo >&2 "$@"
+    exit 1
+}
+
+[ "$#" -eq 1 ] || die "keymap argument required, $# provided"
+
+MAP=$1
+
+make "$MAP"
+
+FILE="${MAP/:/_}.hex"
+
+mv $FILE ../build/$FILE
