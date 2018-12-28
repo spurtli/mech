@@ -20,6 +20,30 @@ file from the `./build` dir. We use the [QMK Toolbox](https://qmk.fm/toolbox/) t
 You can use `./build/setup` to grab the lastest QMK Firmware. It will setup all folders for the *build* step. You can
 also add new keymaps to `./keyboards/<keyboard>/keymaps/<your-keymap>`.
 
+### Dependencies
+
+On macOS you can use homebrew to get all necessary dependencies. This list might change and a more recent one can be
+found at the [QMK Firmware repository](https://github.com/qmk/qmk_firmware/blob/master/docs/getting_started_build_tools.md).
+
+```bash
+brew tap osx-cross/avr
+brew tap PX4/homebrew-px4
+brew update
+brew install avr-gcc@7
+brew link --force avr-gcc@7
+brew install dfu-programmer
+brew install dfu-util
+brew install gcc-arm-none-eabi
+brew install avrdude
+``` 
+
 ## Prerequisites
 
+We have used the following tools to get our keyboards up and running. We use macOS, so this might be a bit different for
+an other OS.
+
 * [git](https://git-scm.com/)
+* [homebrew](https://brew.sh/)
+* [QMK Firmware](https://qmk.fm/)
+* [QMK Toolbox](https://qmk.fm/toolbox/)
+* [QMK Docs](https://docs.qmk.fm/#/)
